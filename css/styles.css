@@ -1,0 +1,306 @@
+/**
+*	general design of website
+*/
+
+body{
+	background-color: black;
+}
+a, a:hover{
+	color: black;
+	text-decoration: none;
+}
+.body{
+	background-color: rgba(255,255,255,0.5);
+	padding: 30px;
+}
+.categories{
+	padding: 15px;
+	background-color: rgba(255,255,255,0.8);
+}
+.content-background{
+	background-color: rgba(255,255,255,0.5);
+}
+
+/**
+*	design of adding and editing a cocktail a cocktail
+*/
+
+.add_cocktail {
+    padding: 25px;
+}
+.add_form_field, .delete_ing{
+	width: 7%;
+}
+.delete_ing{
+	padding-left: 7px;
+}
+textarea{
+	resize: vertical;
+}
+.edit, .delete{
+	font-size: 15pt;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 30px;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	margin: 10px;
+}
+.edit:hover, .delete:hover{
+	width: 38px;
+	height: 38px;
+	background-color: rgba(255,255,255,1);
+}
+.delete{
+	right: 0;
+}
+.edit{
+	left: 0;
+}
+.singleProduct{
+	background-color: rgba(255,255,255,0.8);
+	padding:5px;
+}
+.productContent{
+	width: 100%;
+	height: 100%;
+}
+.productImg img{
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+    overflow: hidden;
+}
+.preview img{
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+    overflow: hidden;
+}
+.currentPic{
+	margin-top: 10px;
+	font-weight: bold;
+}
+.productTitel{
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	text-overflow: ellipsis;
+}
+.productDescription{
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	text-overflow: ellipsis;
+}
+.productDescriptionSingle{
+	padding-left: 5px;
+	padding-right: 10px;
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.ingredients{
+	padding-left: 10px;
+	padding-right: 5px;
+	width: 50%;
+	float: right;
+	border-left: 1px solid black;
+}
+.submit{
+	width: 100%
+}
+.productCat{
+	float: right;
+}
+.categorie{
+	font-size: 14pt;
+	margin-top: 2px;
+	margin-bottom: 2px
+}
+.categorie:hover{
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 2px 2px grey;
+}
+.activeCat{
+	background-color: rgba(255,255,255,0.5);
+}
+
+/**
+*	Pagination
+*/
+
+.pages{
+	font-size: 12pt;
+	height: 50px;
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.pages a{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+.firstPage, .lastPage {
+	background-color: rgba(255,255,255,0.7);
+    width: 65px;
+    height: 40px;
+    margin:5px;
+    margin-top: 3px;
+    float: left;
+}
+.firstPage{
+	border-radius: 10px 0 0 10px;
+}
+.lastPage{
+	border-radius: 0 10px 10px 0;
+}
+.pageNumber {
+	background-color: rgba(255,255,255,0.7);
+	margin:3px;
+	height: 40px;
+    width: 40px;
+    display: block;
+    float: left;
+}
+.active{
+	background-color: rgba(255,255,255,1);
+	font-weight: bold;
+}
+
+/**
+*	Design for registerfield
+*/
+
+.register{
+	padding: 10px;
+	background-color: rgba(255,255,255,0.75);
+}
+
+
+/**
+*	Design for login field
+*/
+
+.login{
+	width: 50%;
+	padding: 15px;
+	background-color: rgba(255,255,255,0.9);
+}
+.loginTitel{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	background-color: black;
+	color: white;
+	font-size: 15pt;
+}
+.box{
+	margin-left: 10px;
+}
+@media only screen and (max-width: 996px) {
+    .login{
+		width: 75%;
+	}
+}
+@media only screen and (max-width: 600px) {
+    .login{
+		width: 100%;
+	}
+}
+
+/**
+*	Design for star rating system
+*/
+
+span.starrating { 
+ float: Left; 
+} 
+
+span.starrating:not(:checked) > input { 
+ display: None; 
+} 
+
+span.starrating:not(:checked) > label { 
+ float: Right; 
+ width: 1em; 
+ padding: 0 .1em; 
+ overflow: Hidden; 
+ white-space: Nowrap; 
+ cursor: Pointer; 
+ font-size: 200%; 
+ line-height: 1.2; 
+ color: #D0D0D0; 
+ text-shadow: 1px 1px #B0B0B0, 2px 2px #606060, .1em .1em .2em rgba(0,0,0,.5); 
+ transition: all .5s; 
+} 
+
+span.starrating:not(:checked) > label:before { 
+ content: '★ '; 
+}
+
+span.starrating > input:checked ~ label { 
+ color: #F9B500; 
+ text-shadow: 1px 1px #C06000, 2px 2px #904000, .1em .1em .2em rgba(0,0,0,.5); 
+} 
+
+span.starrating:not(:checked) > label:hover, 
+span.starrating:not(:checked) > label:hover ~ label { 
+ color: #FFD700; 
+ text-shadow: 1px 1px #F29E02, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5); 
+} 
+
+span.starrating > input:checked + label:hover, 
+span.starrating > input:checked + label:hover ~ label, 
+span.starrating > input:checked ~ label:hover, 
+span.starrating > input:checked ~ label:hover ~ label, 
+span.starrating > label:hover ~ input:checked ~ label { 
+ color: #F9B500; 
+ text-shadow: 1px 1px #F8BA01, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5); 
+} 
+
+.rating-box {
+    color: #D0D0D0;
+    text-shadow: 1px 1px #B0B0B0, 2px 2px #606060, 0.1em 0.1em 0.2em rgba(0,0,0,.5);
+    float: right;
+        margin-top: -40px;
+        position: absolute;
+    right: 10px;
+}
+
+.rating-star{
+  font-size: 3rem;
+    height: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.full-star:before {
+  color: #F9B500;
+  content: '★ ';
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  text-shadow: 1px 1px #C06000, 2px 2px #904000, .1em .1em .2em rgba(0,0,0,.5); 
+}
+
+.empty-star:before {
+  content: '★ ';
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
