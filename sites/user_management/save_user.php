@@ -3,7 +3,7 @@
   //function to save all userdata input from register form
   function saveUser($firstname, $lastname, $email, $username, $password){
     echo $firstname . ' -> ' . $lastname . ' -> ' . $email . ' -> ' . $username . ' -> ' . $password  . ' -> ' . crypt($password);
-    require_once $_SERVER['DOCUMENT_ROOT'].'/cocktail/db/config2.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/db/config2.php';
     $db = new Connection();
     $conn = $db->getConnection();
     // prepare the mysql statements
@@ -27,7 +27,7 @@
       $login->close();
       //execute user insert with login_id
       if ($user->execute()) {
-        header("Location: /cocktail/index.php");
+        header("Location: /cocktailGit/index.php");
       }else{
         echo "Unable to add user";
       }

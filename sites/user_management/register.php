@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       $error .= "Please enter a valid password<br />";
     }
   } else {
-    $error .= "Please enter your lastname<br />";
+    $error .= "Please enter a password<br />";
     $check = 1;
   }
   

@@ -1,6 +1,6 @@
 <?php 
 // by Steven Ringger
-require_once $_SERVER['DOCUMENT_ROOT'].'/cocktail/db/config2.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/db/config2.php';
 $db = new Connection();
 $title = $description = $cat = $ingr = $am = $img = $detail = "";
 
@@ -58,7 +58,7 @@ function update($db){
 			$success = $cocktails->execute();
 		}
 		if ($success) {
-			header("Location: /cocktail/index.php");
+			header("Location: /cocktailGit/index.php");
 		}else{
 			echo "Not skilled enough to mix cocktail!";
 		}
@@ -98,7 +98,7 @@ function insert($db){
 			$success = $cocktails->execute();
 		}
 		if ($success) {
-			header("Location: /cocktail/index.php");
+			header("Location: /cocktailGit/index.php");
 		}else{
 			echo "Not skilled enough to mix cocktail!";
 		}
@@ -110,7 +110,7 @@ function insert($db){
 * upload a imag to the server (credits to w3schools)
 */
 function upload(){
-	$target_dir = $_SERVER['DOCUMENT_ROOT']."/cocktail/img/";
+	$target_dir = $_SERVER['DOCUMENT_ROOT']."/cocktailGit/img/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

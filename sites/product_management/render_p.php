@@ -18,7 +18,7 @@ class Render{
             <div class="singleProduct col-sm-4">
               <div class="productContent">
                 <div class="productImg">                  
-                  <img src="/cocktail/img/<?php echo $cocktail->getimage(); ?>">
+                  <img src="/cocktailGit/img/<?php echo $cocktail->getimage(); ?>">
                 </div>
                 <div class="rating-box">
                      <?php 
@@ -51,7 +51,7 @@ class Render{
 		<div class="singleProduct col-sm-12">
       <div class="productContent">
         <div class="productImg">
-          <img src="/cocktail/img/<?php echo $cocktail->getimage(); ?>">
+          <img src="/cocktailGit/img/<?php echo $cocktail->getimage(); ?>">
         </div>
         <?php if(!isset($_SESSION['login_id'])){ ?>
           <div class="rating-box">

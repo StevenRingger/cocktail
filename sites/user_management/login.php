@@ -23,7 +23,7 @@
     if($count == 1 && password_verify($mypassword, $row['password'])) {
       //add login id to session and go to user page
       $_SESSION['login_id'] = $loginid;
-      header("location: /cocktail?action=user");
+      header("location: /cocktailGit?action=user");
     }else {
       $error = "Your Login Name or Password is invalid";
     }

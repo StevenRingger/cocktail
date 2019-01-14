@@ -6,11 +6,23 @@
   $amounts = $products->getAmounts();
   $categories = $products->getCategories();
   $cocktail = $products->getCocktail($_GET['id']);
+
+  $con = new Connection();
+  $db = $con->getConnection();
+  $id = $_SESSION['login_id'];
+  $sql = mysqli_query($db,"select role from users where fk_login_id = '$id'");
+  $row = mysqli_fetch_array($sql,MYSQLI_ASSOC);
+  
+  if ($row['role'] != 1) {
+    header("location: /cocktailGit");
+  }
+
 ?>
 <div class="add_cocktail">
 <h1>Edit cocktail</h1>
+
 <!-- form for editing a cockatil -->
-<form method="post" action="/cocktail/sites/product_management/validate.php" onsubmit="return validateForm()" name="addCocktail" enctype="multipart/form-data">
+<form method="post" action="/cocktailGit/sites/product_management/validate.php" onsubmit="return validateForm()" name="addCocktail" enctype="multipart/form-data">
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
   <div class="row">
@@ -53,7 +65,7 @@
         </div>
         <div class="col-sm-4">
           <div class="preview">
-            <img src="/cocktail/img/<?php echo $cocktail->getimage(); ?>" id="cocktail_pic">
+            <img src="/cocktailGit/img/<?php echo $cocktail->getimage(); ?>" id="cocktail_pic">
           </div>
         </div>
       </div>

@@ -5,11 +5,21 @@
   $ingredients = $products->getIngredients();
   $amounts = $products->getAmounts();
   $categories = $products->getCategories();
+
+  $con = new Connection();
+  $db = $con->getConnection();
+  $id = $_SESSION['login_id'];
+  $sql = mysqli_query($db,"select role from users where fk_login_id = '$id'");
+  $row = mysqli_fetch_array($sql,MYSQLI_ASSOC);
+  
+  if ($row['role'] != 1) {
+    header("location: /cocktailGit");
+  }
 ?>
 <!-- basic form for adding a cocktail -->
 <div class="add_cocktail">
   <h1>Add new cocktail</h1>
-  <form method="post" action="/cocktail/sites/product_management/validate.php" onsubmit="return validateForm()" name="addCocktail" enctype="multipart/form-data">
+  <form method="post" action="/cocktailGit/sites/product_management/validate.php" onsubmit="return validateForm()" name="addCocktail" enctype="multipart/form-data">
     <input type="hidden" name="action" value="insert">
     <div class="row">
       <div class="form-group col-sm-7">
@@ -45,7 +55,7 @@
           </div>
           <div class="col-sm-4">
             <div class="preview">
-              <img src="/cocktail/img/placeholder.png" id="cocktail_pic">
+              <img src="/cocktailGit/img/placeholder.png" id="cocktail_pic">
             </div>
           </div>
         </div>

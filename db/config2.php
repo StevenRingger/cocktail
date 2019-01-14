@@ -5,7 +5,7 @@ class Connection
     private $id = 'root';
     private $pw = '';
     private $host = 'localhost';
-    private $database = 'cocktail';
+    private $database = 'cocktail_test';
     private $link;
 
     public function getConnection(): \mysqli

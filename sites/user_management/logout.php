@@ -5,6 +5,6 @@
    session_start();
    
    if(session_destroy()) {
-      header("Location: /cocktail/index.php");
+      header("Location: /cocktailGit/index.php");
    }
 ?>

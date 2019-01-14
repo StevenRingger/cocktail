@@ -1,9 +1,9 @@
 <?php
 // by Steven Ringger and Zoe Abeln
 //general includes needed
-  require_once $_SERVER['DOCUMENT_ROOT'].'/cocktail/db/config2.php';
-  require_once $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/product_management/product_details.php'; 
-  require_once $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/product_management/cocktail.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/db/config2.php';
+  require_once $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/product_management/product_details.php'; 
+  require_once $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/product_management/cocktail.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,11 +20,11 @@
 </head>
 <body>
   <!-- include of main navigation file -->
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/cocktail/nav/main_nav.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/nav/main_nav.php'; ?>
   <div class="body container">
     <?php
     // include the file to render products
-      include $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/product_management/render_p.php'; 
+      include $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/product_management/render_p.php'; 
       $display = new Render();
       $products = new ProductDetails();
       //create a new render and productdetails instance
@@ -59,19 +59,19 @@
           if(isset($_GET['action'])){
             switch ($_GET['action']) {
                 case "add":
-                    include $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/product_management/addCocktail.php';
+                    include $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/product_management/addCocktail.php';
                     break;
                 case "edit":
-                    include $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/product_management/editCocktail.php';
+                    include $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/product_management/editCocktail.php';
                     break;
                 case "user":
-                    include $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/user_management/welcome.php';
+                    include $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/user_management/welcome.php';
                     break;
                 case "login":
-                    include $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/user_management/login.php';
+                    include $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/user_management/login.php';
                     break;
                 case "signup":
-                    include $_SERVER['DOCUMENT_ROOT'].'/cocktail/sites/user_management/register.php';
+                    include $_SERVER['DOCUMENT_ROOT'].'/cocktailGit/sites/user_management/register.php';
                     break;
                 case "delete":
                     $products->deleteCocktail($_GET['id']);
@@ -139,7 +139,7 @@
       $.ajax({
         data: data,
         type: "POST",
-        url: "/cocktail/sites/product_management/addRating.php",
+        url: "/cocktailGit/sites/product_management/addRating.php",
         success: function(data){
           location.reload();
         }
